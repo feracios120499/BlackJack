@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BlackJack
 {
@@ -58,18 +59,20 @@ namespace BlackJack
         }
         private void Sort()
         {
-            Random rand = new Random();
-            for (int i = cards.Count - 1; i > 0; i--)
+            Random r = new Random();
+            SortedList<int, Card> mixedList = new SortedList<int, Card>();
+            foreach (Card item in cards)
+                mixedList.Add(r.Next(), item);
+            cards.Clear();
+            for (int i = 0; i < mixedList.Count; i++)
             {
-                int j = rand.Next(0, i + 1);
-                Card tmp = cards[i];
-                cards[i] = cards[j];
-                cards[j] = tmp;
+                cards.Add(mixedList.Values[i]);
             }
         }
         public Card GetCard()
         {
             Card card = cards.First();
+            MessageBox.Show(card.CountPoint.ToString());
             cards.Remove(cards.First());
             return card;
         }

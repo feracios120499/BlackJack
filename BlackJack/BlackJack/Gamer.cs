@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BlackJack
 {
@@ -34,9 +35,10 @@ namespace BlackJack
         public int GetPoints()
         {
             int sum = 0;
-            foreach(var item in cards)
+            for(int i=0;i<cards.Count;i++)
             {
-                sum += item.CountPoint;
+                //MessageBox.Show(cards[i].ImageCard.ToString()+ cards[i].CountPoint.ToString());
+                sum += cards[i].CountPoint;
             }
             return sum;
         }

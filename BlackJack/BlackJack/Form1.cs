@@ -86,7 +86,7 @@ namespace BlackJack
             me.SetCard(card);
             AddPicture(card.ImageCard, panelMyCards);
             card = game.GetCard();
-            me.SetCard(game.GetCard());
+            me.SetCard(card);
             AddPicture(card.ImageCard, panelMyCards);
             labelPoint.Text = $"Point:{me.GetPoints()}";
             if (me.GetPoints() == 21)

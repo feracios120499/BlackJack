@@ -9,8 +9,8 @@ namespace BlackJack
 {
     public class Card
     {
-        public Image ImageCard { get; }
-        public int CountPoint { get; }
+        public Image ImageCard { get; set; }
+        public int CountPoint { get; set; }
         public Card(Image image,int point)
         {
             this.ImageCard = image;
