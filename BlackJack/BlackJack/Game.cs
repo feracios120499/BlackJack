@@ -72,7 +72,6 @@ namespace BlackJack
         public Card GetCard()
         {
             Card card = cards.First();
-            MessageBox.Show(card.CountPoint.ToString());
             cards.Remove(cards.First());
             return card;
         }
